@@ -1,0 +1,59 @@
+<div class="row mt-4">
+    <div class="col-md-6">
+        <div class="row" style="height: 450px;">
+            <div class="col md-12 my-auto side-header">
+                <img src="/assets/img/add_user.png" class="mx-auto d-block">
+                <h1>Seja um de nós</h1>
+                <p><em>UnBank <strong>crie sua conta</strong> é <strong>de graça</strong></em></p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <form [formGroup]="service.formModel" autocomplete="off" (submit)="onSubmit()">
+            <div class="form-group required">
+                <label>Cpf</label>
+                <input class="form-control" formControlName="Cpf">
+                <label class="text-danger" *ngIf="service.formModel.get('Cpf').touched && service.formModel.get('Cpf').errors?.required">Campo não preenchido</label>
+                <label class="text-danger" *ngIf="service.formModel.get('Cpf').touched && service.formModel.get('Cpf').errors?.minlength">CPF inválido</label>
+            </div>
+            <div class="form-group required">
+                <label>Nome</label>
+                <input class="form-control" formControlName="Nome">
+                <label class="text-danger" *ngIf="service.formModel.get('Nome').touched && service.formModel.get('Nome').errors?.required">Campo não preenchido</label>
+            </div>
+            <div class="form-group required">
+                <label>Cep</label>
+                <input class="form-control" formControlName="Cep">
+                <label class="text-danger" *ngIf="service.formModel.get('Cep').touched && service.formModel.get('Cep').errors?.required">Campo não preenchido</label>
+            </div>
+            <div formGroupName="Passwords">
+                <div class="form-group required">
+                    <label>Senha</label>
+                    <input type="password" class="form-control" formControlName="Senha">
+                    <label class="text-danger" *ngIf="service.formModel.get('Passwords.Senha').touched && service.formModel.get('Passwords.Senha').errors?.required">Campo não preenchido</label>
+                    <label class="text-danger" *ngIf="service.formModel.get('Passwords.Senha').touched && service.formModel.get('Passwords.Senha').errors?.minlength">Senha muito curta, mínimo 5 caracteres</label>
+                </div>
+                <div class="form-group required">
+                    <label>Confirme a Senha</label>
+                    <input type="password" class="form-control" formControlName="ConfirmSenha">
+                    <label class="text-danger" *ngIf="service.formModel.get('Passwords.ConfirmSenha').touched && service.formModel.get('Passwords.ConfirmSenha').errors?.required">Campo não preenchido</label>
+                    <label class="text-danger" *ngIf="service.formModel.get('Passwords.ConfirmSenha').touched && service.formModel.get('Passwords.ConfirmSenha').errors?.passwordMismatch">As senhas não estão iguais</label>
+                </div>
+            </div>
+            <div class="form-group required">
+                <label>Email</label>
+                <input type="email" class="form-control" formControlName="Email">
+                <label class="text-danger" *ngIf="service.formModel.get('Email').touched && service.formModel.get('Email').errors?.email">Email Inválido</label>
+            </div>
+            <div class="form-group">
+                <label>Telefone</label>
+                <input class="form-control" formControlName="PhoneNumber">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-8 offset-md-2">
+                    <button type="submit" class="btn btn-lg btn-block">Registrar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
