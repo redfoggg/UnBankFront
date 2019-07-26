@@ -21,7 +21,7 @@ export class RegistrationComponent implements OnInit {
         if (res.succeeded) {
           //envia a mensagem de registro bem sucedido
           this.service.formModel.reset();
-          this.toastr.success('New user created!', 'Registration successful.');
+          this.toastr.success('Nova conta criada!', 'Número da conta é: ');
         } else {
           res.errors.forEach(element => {
             switch (element.code) {

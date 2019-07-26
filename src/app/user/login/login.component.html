@@ -1,11 +1,11 @@
-<form #form='ngForm' class="mb-4">
+<form #form='ngForm' class="mb-4" (submit)="onSubmit(form)">
     <div class="form-group">
-        <label>CPF</label>
-        <input class="form-control" #Cpf="ngModel" name="Cpf" [(ngModel)]="formModel.Cpf" required>
+        <label>Número da Conta</label>
+        <input class="form-control" #N_Conta="ngModel" name="N_Conta" [(ngModel)]="formModel.N_Conta" required>
     </div>
     <div class="form-group">
         <label>Senha</label>
-        <input type="password" class="form-control" #Cpf="ngModel" name="Senha" [(ngModel)]="formModel.Senha" required>
+        <input type="password" class="form-control" #Senha="ngModel" name="Senha" [(ngModel)]="formModel.Senha" required>
     </div>
     <div class="form-row">
         <div class="form-group col-md-8 offset-md-2">

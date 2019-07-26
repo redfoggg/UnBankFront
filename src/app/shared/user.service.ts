@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 @Injectable({
   providedIn: 'root'
 })
@@ -42,6 +42,14 @@ export class UserService {
       PhoneNumber : this.formModel.value.PhoneNumber
     };
     return this.http.post(this.UrlBase + '/ApplicationUser/Register', body)
+  }
+  login(formData){
+    return this.http.post(this.UrlBase + '/ApplicationUser/Login', formData)
+  }
+  getUserProfile(){
+    //se torna descenessária graças ao interceptor que generaliza a função
+    //var tokenHeader = new HttpHeaders({'Authorization':'Bearer '+ localStorage.getItem('token')});
+    return this.http.get(this.UrlBase + '/UserProfile');
   }
 
 }
