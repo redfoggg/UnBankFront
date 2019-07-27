@@ -11,7 +11,7 @@ import { NgForm } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
   formModel={
-    N_Conta:'',
+    Cpf:'',
     Senha:''
   }
 
@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
       },
       err => {
         if(err.status == 400)
-        this.toastr.error('Número da conta incorreta ou senha incorreta');
+        this.toastr.error('Cpf incorreto ou senha incorreta');
         else
         console.log(err);
       }

@@ -1,12 +1,13 @@
 <nav class="navbar navbar-dark bg-dark">
-    <a class="navbar-brand text-white">JWT Auth System</a>
-    <button class="btn btn-danger my-2 my-sm-0" (click)="onLogout()">Logout</button>
+    <a class="navbar-brand text-white">UnBank</a>
+    <button class="btn btn-danger my-2 my-sm-0" (click)="onLogout()">Sair</button>
   </nav>
   
   <div class="card m-5" style="width:18rem" *ngIf="userDetails">
     <ul class="list-group">
-      <li class="list-group-item"><strong>Username : </strong>{{userDetails.userName}}</li>
+      <li class="list-group-item"><strong>Número da conta : </strong>{{userDetails.n_conta}}</li>
       <li class="list-group-item"><strong>Nome : </strong>{{userDetails.nome}}</li>
       <li class="list-group-item"><strong>Saldo : </strong>{{userDetails.saldo}}</li>
+      <li class="list-group-item"><strong>Cep : </strong>{{userDetails.cep}}</li>
     </ul>
   </div>
